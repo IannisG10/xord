@@ -1,7 +1,7 @@
 import React from "react";
 import { HiUserGroup } from "react-icons/hi"
-import { HiMiniCube,HiBanknotes,HiClock,HiArchiveBox,HiArrowTrendingUp,HiTrophy,HiMiniPlus,HiSquaresPlus } from "react-icons/hi2"
-
+import { HiMiniCube,HiBanknotes,HiClock,HiArchiveBox,HiTrophy,HiMiniPlus,HiSquaresPlus } from "react-icons/hi2"
+import { Link } from "react-router";
 
 const DashBoard: React.FC = () => {
     return(
@@ -28,7 +28,9 @@ const DashBoard: React.FC = () => {
                 Graphique
             </div>
             <div className="col-span-2 cursor-pointer hover:scale-95 transition-all duration-300 ease-in-out row-span-2 col-start-9 row-start-3 p-2 bg-[#FFBF66] text-xl font-chivo rounded-md">
-                <HiMiniPlus/> Ajouter un Client
+                <Link to="/newClient" className="h-full">
+                    <HiMiniPlus/> Ajouter un Client
+                </Link>
             </div>
             <div className="col-span-2 row-span-2 col-start-9 row-start-5 p-2 bg-[#C49FFF] text-xl font-chivo rounded-md">
                 <HiSquaresPlus/> Ajouter une nouvelle commande
