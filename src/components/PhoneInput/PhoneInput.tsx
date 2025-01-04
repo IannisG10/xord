@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const PhoneInput: React.FC = () => {
   return (
     <StyledWrapper>
-      <div className="ui-wrapper">
+      <div className="ui-wrapper w-full">
         <input defaultChecked id="Austria" name="flag" type="radio" />
         
         <input id="France" name="flag" type="radio" />
