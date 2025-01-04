@@ -24,14 +24,14 @@ const ClientForm: React.FC = () => {
         setIsCheck(!isCheck)
     }
     return(
-            <div className={isCheck ? "flex flex-row  items-center" : ""}>
+            <div className="flex flex-row justify-between  items-center h-full">
                 <div className="m-5 flex flex-col">
                     <div className="flex flex-col gap-1 my-3">
                             <h1 className="font-bold font-monsterat text-3xl">Clients</h1>
                             <h2 className="text-xl">Bienvenue sur la page d'ajout des nouveaux Clients</h2>
                             <h5 className="font-chivo text-gray-400 font-light text-sm">Entrer les informations sur le client</h5>
                     </div>
-                    <form action="" className="w-1/3 mx-4">
+                    <form action="" className="w-full mx-4">
                         <div className="flex flex-col gap-3 border border-gray-200 rounded-md p-5">
                             <div className="flex items-center gap-5 w-full">
                                 <div className="flex flex-col w-full ">
@@ -104,9 +104,12 @@ const ClientForm: React.FC = () => {
                         </div>
                     </form>
                 </div>
-                <div className={`flex-grow ${!isCheck && "hidden"}`}>
-                    <h1 className="text-3xl">Order form</h1>
+                <div className=" h-full flex justify-center items-center flex-grow w-3/4  ">
+                    <div className="w-3/4">
+                        order form
+                    </div>
                 </div>
+                
             </div>
     )
 }
