@@ -12,7 +12,7 @@ interface ClientType {
 
 const Client: React.FC = () => {
 
-    const { register,handleSubmit } = useForm<ClientType>()
+    const { register,handleSubmit,resetField } = useForm<ClientType>()
 
     const onSubmit: SubmitHandler<ClientType> = (data)=>{
         axios.post('https://xord.onrender.com/client',data)
@@ -22,6 +22,8 @@ const Client: React.FC = () => {
         .catch((error) => {
             console.error(error)
         })
+
+        resetField("nom")
         
     }
 

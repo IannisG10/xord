@@ -1,6 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const client = require("./models/client")
+const cors = require("cors")
 const app = express()
 
 require("dotenv").config()
@@ -13,6 +14,7 @@ mongoose.connect("mongodb+srv://guerraiannis:xord1234@cluster0.obc8u.mongodb.net
 
 const PORT = process.env.PORT 
 app.use(express.json())
+app.use(cors())
 
 // The main root (for the test)
 app.get("/",(req,res) => {
