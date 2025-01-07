@@ -6,7 +6,7 @@ const app = express()
 
 require("dotenv").config()
 
-mongoose.connect("mongodb+srv://guerraiannis:xord1234@cluster0.obc8u.mongodb.net/").then(()=>{
+mongoose.connect("mongodb+srv://guerraiannis:xord1234@cluster0.obc8u.mongodb.net/XordDB").then(()=>{
     console.log("Connexion établie avec suces à la base de donnée")
 }).catch(err => {
     console.error("Error when connecting database")
