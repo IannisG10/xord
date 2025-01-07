@@ -8,9 +8,9 @@ const PhoneInput: React.FC = () => {
         <input defaultChecked id="Austria" name="flag" type="radio" />
         
         <input id="France" name="flag" type="radio" />
-        <input id="Germany" name="flag" type="radio" />
-        <input id="Italy" name="flag" type="radio" />
-        <input id="Spain" name="flag" type="radio" />
+        <input id="Mada" name="flag" type="radio" />
+        
+        
         
         <input className="dropdown-checkbox" name="dropdown" id="dropdown" type="checkbox" />
         <label className="dropdown-container" htmlFor="dropdown" />
@@ -25,9 +25,8 @@ const PhoneInput: React.FC = () => {
         <div className="select-wrapper">
           <ul>
             <li className="France"><label htmlFor="France"><span>🇫🇷</span>France (+33)</label></li>
-            <li className="Germany"><label htmlFor="Germany"><span>🇩🇪</span>Germany (+49)</label></li>
-            <li className="Italy"><label htmlFor="Italy"><span>🇮🇹</span>Italy (+39)</label></li>
-            <li className="Spain"><label htmlFor="Spain"><span>🇪🇸</span>Spain (+34)</label></li>
+            <li className="Mada"><label htmlFor="Mada"><span>🇲🇬</span>Mada (+261)</label></li>
+            
           </ul>
         </div>
       </div>
@@ -64,7 +63,7 @@ const StyledWrapper = styled.div`
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
-    border-radius: 7px;
+    border-radius: 10px;
     position: relative;
     border: 1px solid var(--border-color);
     background-color: var(--background);
@@ -142,7 +141,7 @@ const StyledWrapper = styled.div`
 
   .select-wrapper ul {
     width: 100%;
-    background-color: #eef123;
+    background-color: #e5e5e5;
     border-radius: 10px;
     padding: 10px;
     margin: 0;
@@ -281,44 +280,20 @@ const StyledWrapper = styled.div`
     background-color: lightgray;
   }
 
-  .ui-wrapper input#Germany:checked~.dropdown-container::before,
-  .ui-wrapper input#Germany:checked~.select-wrapper li.Germany {
-    content: "🇩🇪";
+  .ui-wrapper input#Mada:checked~.dropdown-container::before,
+  .ui-wrapper input#Mada:checked~.select-wrapper li.Mada {
+    content: "🇲🇬";
     background-color: lightgray;
   }
-
-
-  .ui-wrapper input#Italy:checked~.dropdown-container::before,
-  .ui-wrapper input#Italy:checked~.select-wrapper li.Italy {
-    content: "🇮🇹";
-    background-color: lightgray;
-  }
-
-  .ui-wrapper input#Spain:checked~.dropdown-container::before,
-  .ui-wrapper input#Spain:checked~.select-wrapper li.Spain {
-    content: "🇪🇸";
-    background-color: lightgray;
-  }
-
-  
 
   .ui-wrapper input#France:checked~.input-wrapper .textfield::before {
     content: "+33";
   }
 
-  .ui-wrapper input#Germany:checked~.input-wrapper .textfield::before {
-    content: "+49";
+  .ui-wrapper input#Mada:checked~.input-wrapper .textfield::before {
+    content: "+261";
   }
-
-  .ui-wrapper input#Italy:checked~.input-wrapper .textfield::before {
-    content: "+39";
-  }
-
-  .ui-wrapper input#Spain:checked~.input-wrapper .textfield::before {
-    content: "+34";
-  }
-
- 
+  
   }`;
 
 export default PhoneInput;

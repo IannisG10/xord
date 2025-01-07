@@ -72,10 +72,15 @@ const Client: React.FC = () => {
                                     <input type="text"
                                             className="border border-gray-200 w-full rounded-md focus:border-black outline-none p-1"
                                             placeholder="Entrer une adresse email"
-                                            {...register("email",{required: true})}
+                                            {...register("email",{required: true,pattern: {
+                                                value: /^[A-Za-z0-9]+@[A-Za-z]+\.[A-Za-z]{2,}/,
+                                                message: "Entrer une adresse email valide"
+                                            }})}
                                     />
-                                    {errors.email && <span className="text-xs
+                                    {errors.email?.type === "required" && <span className="text-xs
                                      text-red-500" >Une adresse email valide est obligatoire</span>}
+                                     {errors.email && <span  className="text-xs
+                                     text-red-500">{errors.email.message}</span>}
                                 </div>
                                 <div className="flex flex-col ">
                                     <label className="text-sm font-semibold">Phone Number</label>
@@ -88,10 +93,12 @@ const Client: React.FC = () => {
                                 <input type="text" placeholder="Ajouter une adresse"
                                         className="border border-gray-200 w-full rounded-md focus:border-black 
                                         outline-none p-1"
-                                        {...register("adresse",{required: true})}
+                                        {...register("adresse",{required: true,maxLength: 40})}
                                 />
-                                {errors.adresse && <span className="text-xs
+                                {errors.adresse?.type === "required" && <span className="text-xs
                                      text-red-500">Veuillez saisir une adressse</span>}
+                                {errors.adresse?.type === "maxLength" && <span className="text-xs
+                                     text-red-400" >Adresse trop longue(40 caractères minimum)</span>}
                             </div>
                             <div className="flex items-center gap-5 w-full">
                                 <div className="w-full">
