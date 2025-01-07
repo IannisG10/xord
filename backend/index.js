@@ -13,6 +13,14 @@ mongoose.connect("mongodb+srv://guerraiannis:xord1234@cluster0.obc8u.mongodb.net
 const PORT = process.env.PORT 
 app.use(express.json())
 
+app.get("/",(req,res) => {
+    try {
+        res.send("Connected successfully with 3525 port")
+    } catch (error) {
+        res.send("ERROR")
+    }
+})
+
 app.listen(PORT, ()=> {
     console.log(`Server running on port ${PORT}`)
 })
