@@ -2,6 +2,7 @@ import React from "react"
 import { useForm,SubmitHandler } from "react-hook-form";
 import PhoneInput from "@/components/PhoneInput/PhoneInput";
 import "react-phone-number-input/style.css"
+import axios from "axios";
 
 interface ClientType {
     nom: string;
@@ -14,13 +15,20 @@ const Client: React.FC = () => {
     const { register,handleSubmit } = useForm<ClientType>()
 
     const onSubmit: SubmitHandler<ClientType> = (data)=>{
-        console.log(data)
+        axios.post('https://xord.onrender.com/client',data)
+        .then((response) => {
+            console.log(response.data)
+        })
+        .catch((error) => {
+            console.error(error)
+        })
+        
     }
 
     
     return(
             
-                <div className="m-5 w-1/2 flex flex-col justify-center items-center">
+                <div className="m-5 w-1/2 flex flex-col">
                     <div className="flex flex-col gap-1 my-3">
                             <h1 className="font-bold font-monsterat text-3xl">Clients</h1>
                             <h2 className="text-xl">Bienvenue sur la page d'ajout des nouveaux Clients</h2>
