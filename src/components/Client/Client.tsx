@@ -8,6 +8,9 @@ interface ClientType {
     nom: string;
     prenom: string;
     email: string;
+    adresse: string;
+    province: string;
+    cp: string
 }
 
 const Client: React.FC = () => {
@@ -25,6 +28,9 @@ const Client: React.FC = () => {
 
         resetField("nom")
         resetField("prenom")
+        resetField("email")
+        resetField("province")
+        resetField("adresse")
         
     }
 
@@ -66,8 +72,10 @@ const Client: React.FC = () => {
                                     <input type="text"
                                             className="border border-gray-200 w-full rounded-md focus:border-black outline-none p-1"
                                             placeholder="Entrer une adresse email"
-                                            {...register("email")}
+                                            {...register("email",{required: true})}
                                     />
+                                    {errors.email && <span className="text-xs
+                                     text-red-500" >Une adresse email valide est obligatoire</span>}
                                 </div>
                                 <div className="flex flex-col ">
                                     <label className="text-sm font-semibold">Phone Number</label>
@@ -78,8 +86,12 @@ const Client: React.FC = () => {
                             <div className="flex flex-col">
                                 <label htmlFor="" className="text-sm font-semibold">Adresse(Optionnel)</label>
                                 <input type="text" placeholder="Ajouter une adresse"
-                                        className="border border-gray-200 w-full rounded-md focus:border-black outline-none p-1"
+                                        className="border border-gray-200 w-full rounded-md focus:border-black 
+                                        outline-none p-1"
+                                        {...register("adresse",{required: true})}
                                 />
+                                {errors.adresse && <span className="text-xs
+                                     text-red-500">Veuillez saisir une adressse</span>}
                             </div>
                             <div className="flex items-center gap-5 w-full">
                                 <div className="w-full">
@@ -87,7 +99,10 @@ const Client: React.FC = () => {
                                     <input type="text" 
                                     className="border border-gray-200 w-full rounded-md focus:border-black outline-none p-1"
                                         placeholder="ex: Toamasina"
+                                        {...register("province",{required: true})}
                                     />
+                                    {errors.prenom && <span className="text-xs
+                                     text-red-500">Entrer le nom d'une province</span>}
                                 </div>
                                 <div className="w-full">
                                     <label className="text-sm font-semibold">Code postal</label>

@@ -6,7 +6,9 @@ const ClientSchema = mongoose.Schema({
         required: true
         },
     prenom: String,
-    email: String
+    email: String,
+    adresse: String,
+    province: String
 })
 
 const clientModel = mongoose.model("client",ClientSchema)

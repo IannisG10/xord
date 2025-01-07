@@ -26,12 +26,14 @@ app.get("/",(req,res) => {
 })
 
 app.post("/client",async(req,res) => {
-    const {nom,prenom,email} = req.body
+    const {nom,prenom,email,adresse,province} = req.body
     try {
         const Client = new client({
             nom: nom,
             prenom: prenom,
-            email: email
+            email: email,
+            adresse: adresse,
+            province: province
         })
         const saveClient = await Client.save()
         console.log("post successfully :",saveClient)
