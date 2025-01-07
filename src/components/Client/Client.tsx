@@ -12,7 +12,7 @@ interface ClientType {
 
 const Client: React.FC = () => {
 
-    const { register,handleSubmit,resetField } = useForm<ClientType>()
+    const { register,handleSubmit,resetField,formState: {errors} } = useForm<ClientType>()
 
     const onSubmit: SubmitHandler<ClientType> = (data)=>{
         axios.post('https://xord.onrender.com/client',data)
@@ -24,6 +24,7 @@ const Client: React.FC = () => {
         })
 
         resetField("nom")
+        resetField("prenom")
         
     }
 
@@ -44,8 +45,10 @@ const Client: React.FC = () => {
                                     <input type="text" 
                                             className="border w-full border-gray-200 rounded-md focus:border-black outline-none p-1"
                                             placeholder="ex: Rakoto"
-                                            {...register("nom")}
+                                            {...register("nom",{required: true})}
                                     />
+                                    {errors.nom && <span className="text-xs
+                                     text-red-500">Le nom est obligatoire</span>}
                                 </div>
                                 <div className="flex flex-col w-full ">
                                     <label className="text-sm font-semibold">Prenom</label>

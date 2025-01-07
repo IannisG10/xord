@@ -26,10 +26,16 @@ app.get("/",(req,res) => {
 })
 
 app.post("/client",async(req,res) => {
-    const clientData = req.body
+    const {nom,prenom,email} = req.body
     try {
-        console.log("Data post successfully to the server",clientData)
-        res.status(200).json(clientData)
+        const Client = new client({
+            nom: nom,
+            prenom: prenom,
+            email: email
+        })
+        const saveClient = await Client.save()
+        console.log("post successfully :",saveClient)
+        res.status(200).json(saveClient)
     } catch (err) {
         console.error("Impossible to post data",err)
     }
