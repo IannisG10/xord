@@ -21,7 +21,7 @@ const Client: React.FC = () => {
     const onSubmit: SubmitHandler<ClientType> = (data)=>{
         axios.post('https://xord.onrender.com/client',data)
         .then((response) => {
-            console.log(response.data)
+            alert(response.data.message)
         })
         .catch((error) => {
             console.error(error)

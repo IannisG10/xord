@@ -40,7 +40,7 @@ app.post("/client",async(req,res) => {
         const saveClient = await Client.save()
         console.log("post successfully :",saveClient)
         
-        res.status(200).json({message: "Client crée avec succès"})
+        res.json({message: "Client crée avec succès"})
     } catch (err) {
         console.error("Impossible to post data",err)
     }
