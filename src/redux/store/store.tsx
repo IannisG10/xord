@@ -1,12 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import orderReducer from "../reducer/orderReducer";
+import clientReducer from "../reducer/clientReducer";
 
 const store = configureStore({
     reducer: {
-        order: orderReducer
+        client: clientReducer
     }
 })
 
 export type AppDispatch = typeof store.dispatch
-
 export type RootState = ReturnType<typeof store.getState>

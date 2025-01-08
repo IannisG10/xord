@@ -3,8 +3,9 @@ import { useForm,SubmitHandler } from "react-hook-form";
 import PhoneInput from "@/components/PhoneInput/PhoneInput";
 import "react-phone-number-input/style.css"
 import axios from "axios";
+import { Toaster,toast } from "sonner";
 
-interface ClientType {
+export interface ClientType {
     nom: string;
     prenom: string;
     email: string;
@@ -21,7 +22,10 @@ const Client: React.FC = () => {
     const onSubmit: SubmitHandler<ClientType> = (data)=>{
         axios.post('https://xord.onrender.com/client',data)
         .then((response) => {
-            alert(response.data.message)
+            const res = response.data.message
+            //toast(res)
+            //console.log("Voici le message à afficher dans le toast :",res)
+            toast.success(res)
         })
         .catch((error) => {
             console.error(error)
@@ -41,6 +45,7 @@ const Client: React.FC = () => {
     return(
             
                 <div className="m-5 w-1/2 flex flex-col">
+                    <Toaster richColors />
                     <div className="flex flex-col gap-1 my-3">
                             <h1 className="font-bold font-monsterat text-3xl">Clients</h1>
                             <h2 className="text-xl">Bienvenue sur la page d'ajout des nouveaux Clients</h2>
@@ -131,7 +136,12 @@ const Client: React.FC = () => {
                                 >
                                     Enregistrer
                                 </button>
-                                <button className="w-full border-2 border-gray-200 rounded-md p-2 hover:bg-gray-400 transition-all duration-200 bg-gray-300">Réinitialiser</button>
+                                <button className="w-full border-2 border-gray-200 rounded-md p-2 
+                                hover:bg-gray-400 transition-all duration-200 bg-gray-300"
+                                        onClick={()=>{toast.success("toast")}}
+                                >
+                                    Réinitialiser
+                                </button>
                             </div>
                         </div>
                     </form>
