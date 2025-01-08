@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import { UseFormRegister } from 'react-hook-form';
 
-const PhoneInput: React.FC = () => {
+interface PhoneInputProps {
+  register: UseFormRegister<any>
+}
+
+const PhoneInput: React.FC<PhoneInputProps> = ({register}) => {
   return (
     <StyledWrapper>
       <div className="ui-wrapper w-full">
-        <input defaultChecked id="Austria" name="flag" type="radio" />
         
-        <input id="France" name="flag" type="radio" />
+        <input defaultChecked id="France" name="flag" type="radio" />
         <input id="Mada" name="flag" type="radio" />
-        
-        
         
         <input className="dropdown-checkbox" name="dropdown" id="dropdown" type="checkbox" />
         <label className="dropdown-container" htmlFor="dropdown" />
@@ -18,7 +20,12 @@ const PhoneInput: React.FC = () => {
           <legend>
           </legend>
           <div className="textfield">
-            <input pattern="\d+" maxLength={11} id="phonenumber" type="text"  />
+            <input pattern="\d+" 
+                  maxLength={11} 
+                  id="phonenumber" 
+                  type="text"
+                  {...register("phoneNumber")}
+            />
             <span className="invalid-msg">This is not a valid phone number</span>
           </div>
         </div>

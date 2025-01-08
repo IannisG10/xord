@@ -8,6 +8,7 @@ interface ClientType {
     nom: string;
     prenom: string;
     email: string;
+    phoneNumber: string;
     adresse: string;
     province: string;
     cp: string
@@ -84,7 +85,7 @@ const Client: React.FC = () => {
                                 </div>
                                 <div className="flex flex-col ">
                                     <label className="text-sm font-semibold">Phone Number</label>
-                                    <PhoneInput/>
+                                    <PhoneInput register={register} />
                                     
                                 </div>
                             </div>
