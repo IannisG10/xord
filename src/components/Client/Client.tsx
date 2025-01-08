@@ -33,6 +33,7 @@ const Client: React.FC = () => {
         resetField("province")
         resetField("adresse")
         resetField("phoneNumber")
+        resetField("cp")
         
     }
 
