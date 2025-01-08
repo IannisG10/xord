@@ -9,7 +9,8 @@ const ClientSchema = mongoose.Schema({
     email: String,
     phoneNumber: String,
     adresse: String,
-    province: String
+    province: String,
+    cp: String
 })
 
 const clientModel = mongoose.model("client",ClientSchema)

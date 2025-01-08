@@ -32,6 +32,7 @@ const Client: React.FC = () => {
         resetField("email")
         resetField("province")
         resetField("adresse")
+        resetField("phoneNumber")
         
     }
 
@@ -90,7 +91,7 @@ const Client: React.FC = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col">
-                                <label htmlFor="" className="text-sm font-semibold">Adresse(Optionnel)</label>
+                                <label htmlFor="" className="text-sm font-semibold">Adresse</label>
                                 <input type="text" placeholder="Ajouter une adresse"
                                         className="border border-gray-200 w-full rounded-md focus:border-black 
                                         outline-none p-1"
@@ -117,6 +118,7 @@ const Client: React.FC = () => {
                                     <input type="text" 
                                     className="border border-gray-200 w-full rounded-md focus:border-black outline-none p-1"
                                         placeholder="ex: 501"
+                                        {...register("cp")}
                                     />
                                 </div>
                                 
