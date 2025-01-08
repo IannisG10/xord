@@ -17,7 +17,7 @@ export interface ClientType {
 
 const Client: React.FC = () => {
 
-    const { register,handleSubmit,resetField,formState: {errors} } = useForm<ClientType>()
+    const { register,handleSubmit,reset,resetField,formState: {errors} } = useForm<ClientType>()
 
     const onSubmit: SubmitHandler<ClientType> = (data)=>{
         axios.post('https://xord.onrender.com/client',data)
@@ -138,7 +138,7 @@ const Client: React.FC = () => {
                                 </button>
                                 <button className="w-full border-2 border-gray-200 rounded-md p-2 
                                 hover:bg-gray-400 transition-all duration-200 bg-gray-300"
-                                        onClick={()=>{toast.success("toast")}}
+                                        onClick={() => {reset()}}
                                 >
                                     Réinitialiser
                                 </button>

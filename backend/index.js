@@ -1,8 +1,8 @@
 const express = require("express")
 const mongoose = require("mongoose")
-const client = require("./models/client")
 const cors = require("cors")
 const app = express()
+const client = require("./models/client")
 
 require("dotenv").config()
 
@@ -43,6 +43,15 @@ app.post("/client",async(req,res) => {
         res.json({message: "Client crée avec succès"})
     } catch (err) {
         console.error("Impossible to post data",err)
+    }
+})
+
+app.get("/client",async (req,res)=>{
+    try {
+        const getClient = client.find()
+        res.json(getClient)
+    } catch (err) {
+        console.error("Error when fetching data client",err)
     }
 })
 
