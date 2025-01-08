@@ -7,7 +7,7 @@ const ClientSchema = mongoose.Schema({
         },
     prenom: String,
     email: String,
-    tel: String,
+    phoneNumber: String,
     adresse: String,
     province: String
 })

@@ -32,6 +32,7 @@ app.post("/client",async(req,res) => {
             nom: nom,
             prenom: prenom,
             email: email,
+            phoneNumber: phoneNumber,
             adresse: adresse,
             province: province,
         })
