@@ -22,7 +22,7 @@ const SideBar: React.FC = ()=> {
                         <HiMiniClipboard/> Commandes
                     </li>
                 </NavLink>
-                <NavLink to="/order" className={({isActive}) => (
+                <NavLink to="/client" className={({isActive}) => (
                     isActive ? "bg-[#8fdc97] w-full rounded-l-lg ":""
                 )}>
                     <li className="flex justify-center items-center gap-2 transition-all duration-200 cursor-pointer rounded-md w-full">
