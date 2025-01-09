@@ -13,7 +13,7 @@ const SearchBar: React.FC = () => {
                         <HiMagnifyingGlass/>
                     </div>
                 </div>
-                <div className="text-2xl bg-gray-300 p-1 rounded-sm hover:bg-gray-200 cursor-pointer">
+                <div className="text-2xl bg-[#8fdc97] p-1 rounded-sm hover:bg-gray-200 cursor-pointer">
                     <HiPlus/>
                 </div>
         </div>

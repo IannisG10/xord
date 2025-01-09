@@ -3,11 +3,12 @@ import React from "react";
 const ClientList: React.FC = () => {
     return(
         <div className="flex justify-center">
-            <div className="w-3/4 ">
+            
+            <div className="w-full ">
                 <table className="w-full">
-                    <thead className="font-monsterat text-sm border-b border-gray-700 bg-gray-300">
-                        <tr className="w-full ">
-                            <th className="text-center p-1" >Nom</th>
+                    <thead className="font-monsterat text-sm border-b border-gray-400 bg-gray-300">
+                        <tr className="w-full">
+                            <th className="text-center p-1">Nom</th>
                             <th className="text-center p-1">Prenom</th>
                             <th className="text-center p-1">Contact</th>
                             <th className="text-center p-1">Date d'ajout</th>
