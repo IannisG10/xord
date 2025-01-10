@@ -48,8 +48,9 @@ app.post("/client",async(req,res) => {
 
 app.get("/client",async (req,res)=>{
     try {
-        const getClient = client.find()
+        const getClient = await client.find()
         res.json(getClient)
+        res.json({message: "Client récupéré"})
     } catch (err) {
         console.error("Error when fetching data client",err)
     }

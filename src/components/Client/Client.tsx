@@ -23,8 +23,6 @@ const Client: React.FC = () => {
         axios.post('https://xord.onrender.com/client',data)
         .then((response) => {
             const res = response.data.message
-            //toast(res)
-            //console.log("Voici le message à afficher dans le toast :",res)
             toast.success(res)
         })
         .catch((error) => {
