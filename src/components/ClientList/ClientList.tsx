@@ -19,18 +19,22 @@ const ClientList: React.FC = () => {
                             <th className="text-center p-1">Prenom</th>
                             <th className="text-center p-1">Contact</th>
                             <th className="text-center p-1">Date d'ajout</th>
+                            <th className="text-center p-1">Adresse</th>
                             <th className="text-center p-1">Nombre d'achat</th>
                             <th className="text-center p-1">Edition</th>
                         </tr>
                     </thead>
                     <tbody className="bg-gray-200 font-chivo">
                         {client.map((item,index) => (
-                            <tr key={index} className="hover:bg-[#aab9c7]">
+                            <tr key={index} className="hover:bg-[#aab9c7] cursor-pointer">
                                 <td className="text-center p-1" >{item.nom}</td>
                                 <td className="text-center p-1" >{item.prenom}</td>
                                 <td className="text-center p-1" >{item.phoneNumber}</td>
                                 <td className="text-center p-1 flex justify-center" >
                                     <RxBorderDashed/>
+                                </td>
+                                <td className="text-center p-1">
+                                    {item.adresse}
                                 </td>
                                 <td className="text-center p-1 ">
                                     <RxBorderDashed/>

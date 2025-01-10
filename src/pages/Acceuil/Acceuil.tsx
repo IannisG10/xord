@@ -6,7 +6,7 @@ import Board from "../../components/Board/Board"
 
 const Acceuil: React.FC = ()=> {
     return(
-        <div className="h-full flex">
+        <div className=" flex">
             <SideBar/>
             {/* <div>
                 <TopBar/>
