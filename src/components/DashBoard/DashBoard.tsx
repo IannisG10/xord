@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HiUserGroup } from "react-icons/hi"
-import { HiMiniCube,HiBanknotes,HiClock,HiArchiveBox,HiTrophy,HiMiniPlus,HiSquaresPlus } from "react-icons/hi2"
+import { HiMiniCube,
+        HiBanknotes,
+        HiClock,
+        HiArchiveBox
+        ,HiTrophy,HiMiniPlus,
+        HiSquaresPlus } 
+    from "react-icons/hi2";
+import { RxBorderDashed } from "react-icons/rx";
 import { Link } from "react-router";
+import { useAppSelector,useAppDispatch } from "@/redux/hook/hook";
+import { fetchClient } from "@/redux/reducer/clientReducer";
 
 const DashBoard: React.FC = () => {
+
+    const dispatch = useAppDispatch()
+
+    const client = useAppSelector(state => state.client.client)
+    const { status } = useAppSelector(state => state.client)
+
+    useEffect(()=> {
+        dispatch(fetchClient())
+    },[])
+
+
     return(
         <div className="grid grid-cols-10 grid-rows-6 gap-6 px-4 m-7">
             <div className="col-span-2 row-span-2 p-2 bg-[#aeffd8] rounded-md h-32 text-xl font-chivo">
@@ -14,6 +34,7 @@ const DashBoard: React.FC = () => {
             </div>
             <div className="col-span-2 row-span-2 col-start-5 p-2  bg-[#8fdc97] text-xl font-chivo rounded-md">
                 <HiUserGroup/> <div>Nombre Total de Clients</div>
+                {status ? client.length : <RxBorderDashed/>}
             </div>
             <div className="col-span-2 row-span-2 col-start-7 p-2 bg-[#8bba91] text-xl font-chivo rounded-md">
                 <HiClock/> Commande en attente
