@@ -9,5 +9,6 @@ const store = configureStore({
 
 export default store
 
+// Typage des hooks useSelector et useDispath
 export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>

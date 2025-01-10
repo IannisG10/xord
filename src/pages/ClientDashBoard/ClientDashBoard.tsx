@@ -4,6 +4,7 @@ import ClientList from "@/components/ClientList/ClientList";
 import { Button } from "@/components/ui/button";
 import { HiFilter } from "react-icons/hi";
 import { HiUserGroup } from "react-icons/hi2";
+import { RxBorderDashed } from "react-icons/rx";
 import { useAppSelector,useAppDispatch } from "@/redux/hook/hook";
 import { fetchClient } from "@/redux/reducer/clientReducer";
 
@@ -13,7 +14,9 @@ const ClientDashBoard: React.FC = () => {
     const dispatch = useAppDispatch()
 
     const client = useAppSelector( state => state.client.client)
+    const status = useAppSelector(state=> state.client.status)
 
+    // Recupere les clients au premiers chargement de la page
     useEffect(()=>{
         dispatch(fetchClient())
     },[])
@@ -26,7 +29,7 @@ const ClientDashBoard: React.FC = () => {
                     <HiUserGroup/> Nombre total de clients
                 </div>
                 <div className="m-1">
-                    {client.length}
+                    {status ? client.length : <RxBorderDashed/>}
                 </div>
             </div>
             
@@ -36,11 +39,6 @@ const ClientDashBoard: React.FC = () => {
                 </Button>
             </div>
             <ClientList/>
-            <div>
-                {client.map((item,index) => (
-                    <p key={index}>{item.nom}</p>
-                ))}
-            </div>
         </div>
     )
 }

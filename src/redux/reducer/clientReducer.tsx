@@ -4,11 +4,13 @@ import { ClientType } from "@/components/Client/Client";
 import axios from "axios";
 
 interface ClientState {
-    client: ClientType[]
+    client: ClientType[];
+    status: boolean;
 }
 
 const initialState: ClientState = {
-    client: []
+    client: [],
+    status: false
 }
 
 export const fetchClient = createAsyncThunk(
@@ -29,7 +31,10 @@ const clientSlice = createSlice({
     initialState,
     reducers:{},
     extraReducers: (builder)=> {
-        builder.addCase(fetchClient.fulfilled,(state,action) => {
+        builder.addCase(fetchClient.pending,(state) => {
+            state.status = false
+        }).addCase(fetchClient.fulfilled,(state,action) => {
+            state.status = true
             state.client = action.payload
         })
     }
