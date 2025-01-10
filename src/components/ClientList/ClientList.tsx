@@ -1,6 +1,13 @@
 import React from "react";
+import { useAppSelector } from "@/redux/hook/hook";
+import { HiPencil } from "react-icons/hi2";
+import { HiTrash } from "react-icons/hi";
+import { RxBorderDashed } from "react-icons/rx";
 
 const ClientList: React.FC = () => {
+
+    const { client } = useAppSelector(state => state.client)
+    
     return(
         <div className="flex justify-center">
             
@@ -13,18 +20,27 @@ const ClientList: React.FC = () => {
                             <th className="text-center p-1">Contact</th>
                             <th className="text-center p-1">Date d'ajout</th>
                             <th className="text-center p-1">Nombre d'achat</th>
-                            <th className="text-center p-1">Supp & edit</th>
+                            <th className="text-center p-1">Edition</th>
                         </tr>
                     </thead>
                     <tbody className="bg-gray-200 font-chivo">
-                        <tr>
-                            <td className="text-center p-1" >heg</td>
-                            <td className="text-center p-1" >hsuh</td>
-                            <td className="text-center p-1" >hdsj</td>
-                            <td className="text-center p-1" >hdsj</td>
-                            <td className="text-center p-1">hdsj</td>
-                            <td className="text-center p-1">hddgsj</td>
-                        </tr>
+                        {client.map((item,index) => (
+                            <tr key={index} className="hover:bg-[#aab9c7]">
+                                <td className="text-center p-1" >{item.nom}</td>
+                                <td className="text-center p-1" >{item.prenom}</td>
+                                <td className="text-center p-1" >{item.phoneNumber}</td>
+                                <td className="text-center p-1 flex justify-center" >
+                                    <RxBorderDashed/>
+                                </td>
+                                <td className="text-center p-1 ">
+                                    <RxBorderDashed/>
+                                </td>
+                                <td className="text-center p-1 flex justify-center items-center gap-1">
+                                    <HiPencil className="text-blue-600"/>
+                                    <HiTrash className="text-red-600"/>
+                                </td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
