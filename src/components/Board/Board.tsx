@@ -5,9 +5,9 @@ import DashBoard from "../DashBoard/DashBoard"
 
 const Board: React.FC = () => {
     return(
-        <div className="flex flex-col flex-1">
+        <div className="flex-1">
             <TopBar/>
-            <DashBoard/>
+            {/* <DashBoard/> */}
         </div>
     )
 }

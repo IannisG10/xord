@@ -6,13 +6,10 @@ import Board from "../../components/Board/Board"
 
 const Acceuil: React.FC = ()=> {
     return(
-        <div className=" flex">
+        <div className="flex h-screen">
             <SideBar/>
-            {/* <div>
-                <TopBar/>
-                <DashBoard/>
-            </div> */}
             <Board/>
+            
         </div>
     )
 }

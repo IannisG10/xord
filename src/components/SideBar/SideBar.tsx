@@ -6,8 +6,8 @@ import { NavLink } from "react-router";
 
 const SideBar: React.FC = ()=> {
     return(
-        <div className=" md:w-1/5 w-1/4 bg-[#AEFFD8] pt-4 font-chivo">
-            <ul className="flex justify-center items-center flex-col gap-5 md:pl-4 pl-2 md:text-lg text-xs ">
+        <div className="md:w-1/5 w-1/3 h-full bg-[#AEFFD8] pt-4 font-chivo">
+            <ul className="flex justify-center items-center flex-col gap-5 md:pl-4 pl-2 md:text-lg text-sm  ">
                 <NavLink to="/" className={({isActive}) => (
                     isActive ? "bg-[#8fdc97] w-full rounded-l-lg ":""
                 )}>
