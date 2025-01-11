@@ -39,16 +39,16 @@ const DashBoard: React.FC = () => {
             <div className="col-span-2 row-span-2 md:col-start-7 col-start-3 md:row-start-1 row-start-3 p-1 bg-[#8bba91] md:text-xl text-xs font-chivo rounded-md">
                 <HiClock/> Commande en attente
             </div>
-            <div className="md:col-span-4 col-span-2 row-span-2 md:row-start-3 row-start-5 col-start-1 p-1 bg-[#00a896] md:text-xl text-xs font-chivo rounded-md">
+            <div className="md:col-span-4 col-span-2 md:row-span-2 row-span-1 md:row-start-3 row-start-5 col-start-1 p-1 bg-[#00a896] md:text-xl text-xs font-chivo rounded-md">
                 <HiArchiveBox/> Commandes récentes
             </div>
-            <div className="md:col-span-4 col-span-2 row-span-2 col-start-1 row-start-6 md:row-start-5 p-1 bg-[#9bb1ff] font-chivo md:text-xl text-xs rounded-md">
+            <div className="md:col-span-4 col-span-2 md:row-span-2 row-span-1 col-start-1 row-start-6 md:row-start-5 p-1 bg-[#9bb1ff] font-chivo md:text-xl text-xs rounded-md">
                 <HiTrophy/> Top Clients
             </div>
             <div className="md:col-span-4 col-span-2 md:row-span-4 row-span-2 md:col-start-5 col-start-3 md:row-start-3 row-start-5 p-1 bg-[#da969f] md:text-xl text-xs font-chivo rounded-md">
                 Graphique
             </div>
-            <div className="col-span-2 row-span-2 md:col-start-9 col-start-2 md:row-start-3 row-start-7 cursor-pointer hover:scale-95 transition-all duration-300 ease-in-out p-1 bg-[#FFBF66] md:text-xl text-xs font-chivo rounded-md">
+            <div className="col-span-2 row-span-2 md:col-start-9 col-start-1 md:row-start-3 row-start-7 cursor-pointer hover:scale-95 transition-all duration-300 ease-in-out p-1 bg-[#FFBF66] md:text-xl text-xs font-chivo rounded-md">
                 <Link to="/newClient" className="h-full">
                     <HiMiniPlus/> Ajouter un Client
                 </Link>
