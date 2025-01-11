@@ -7,7 +7,7 @@ const Board: React.FC = () => {
     return(
         <div className="flex-1">
             <TopBar/>
-            {/* <DashBoard/> */}
+            <DashBoard/>
         </div>
     )
 }

@@ -1,0 +1,35 @@
+<div className="grid grid-cols-2 grid-rows-10 gap-4 px-4 m-7 md:grid-cols-4 md:grid-rows-8 md:gap-6">
+    <div className="col-span-2 row-span-2 p-2 bg-[#aeffd8] rounded-md h-32 text-xl font-chivo">
+        <HiMiniCube /> <div>Nombre Total de commandes</div>
+    </div>
+
+    <div className="col-span-2 row-span-2 col-start-3 p-2 bg-[#8affc1] text-xl font-chivo rounded-md">
+        <HiBanknotes /> <div>Chiffre d'affaire Total</div>
+    </div>
+
+    <div className="col-span-2 row-span-2 p-2 bg-[#8fdc97] text-xl font-chivo rounded-md md:col-start-1 md:row-start-3">
+        <HiUserGroup /> <div>Nombre Total de Clients</div>
+        {status ? client.length : <RxBorderDashed />}
+    </div>
+    
+    <div className="col-span-2 row-span-2 p-2 bg-[#8bba91] text-xl font-chivo rounded-md md:col-start-3 md:row-start-3">
+        <HiClock /> Commande en attente
+    </div>
+    <div className="col-span-2 row-span-2 p-2 bg-[#00a896] text-xl font-chivo rounded-md md:col-span-4 md:row-start-5">
+        <HiArchiveBox /> Commandes récentes
+    </div>
+    <div className="col-span-2 row-span-2 p-2 bg-[#9bb1ff] font-chivo text-xl rounded-md md:col-span-2 md:row-start-7">
+        <HiTrophy /> Top Clients
+    </div>
+    <div className="col-span-2 row-span-4 p-2 bg-[#da969f] text-xl font-chivo rounded-md md:col-span-2 md:row-start-5 md:col-start-3">
+        Graphique
+    </div>
+    <div className="col-span-2 row-span-2 p-2 bg-[#FFBF66] text-xl font-chivo rounded-md cursor-pointer hover:scale-95 transition-all duration-300 ease-in-out md:col-start-2 md:row-start-7">
+        <Link to="/newClient" className="h-full">
+            <HiMiniPlus /> Ajouter un Client
+        </Link>
+    </div>
+    <div className="col-span-2 row-span-2 p-2 bg-[#C49FFF] text-xl font-chivo rounded-md md:col-start-4 md:row-start-7">
+        <HiSquaresPlus /> Ajouter une nouvelle commande
+    </div>
+</div>
