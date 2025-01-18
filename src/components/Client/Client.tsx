@@ -42,7 +42,7 @@ const Client: React.FC = () => {
     
     return(
             
-                <div className="m-5 w-1/2 flex flex-col">
+                <div className="m-5 md:w-1/2 w-3/4 flex flex-col">
                     <Toaster richColors />
                     <div className="flex flex-col gap-1 my-3">
                             <h1 className="font-bold font-monsterat text-3xl">Clients</h1>
@@ -51,7 +51,7 @@ const Client: React.FC = () => {
                     </div>
                     <form action="" className=" mx-4" onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex flex-col gap-3 border border-gray-200 rounded-md p-5">
-                            <div className="flex items-center gap-5 w-full">
+                            <div className="flex md:flex-row flex-col items-center md:gap-5 gap-2 w-full">
                                 <div className="flex flex-col w-full ">
                                     <label className="text-sm font-semibold">Nom</label>
                                     <input type="text" 
@@ -72,7 +72,7 @@ const Client: React.FC = () => {
                                 </div>
                             </div>
 
-                            <div className="flex items-center gap-5 w-full">
+                            <div className="flex md:flex-row flex-col items-center md:gap-5 gap-2 w-full">
                                 <div className="flex flex-col w-full">
                                     <label className="text-sm font-semibold">Email</label>
                                     <input type="text"
@@ -106,21 +106,22 @@ const Client: React.FC = () => {
                                 {errors.adresse?.type === "maxLength" && <span className="text-xs
                                      text-red-400" >Adresse trop longue(40 caractères minimum)</span>}
                             </div>
-                            <div className="flex items-center gap-5 w-full">
+                            <div className="flex items-center md:gap-5 gap-2 w-full">
                                 <div className="w-full">
                                     <label className="text-sm font-semibold">Province</label>
                                     <input type="text" 
-                                    className="border border-gray-200 w-full rounded-md focus:border-black outline-none p-1"
+                                    className="border border-gray-200 w-full md:text-base text-sm rounded-md focus:border-black 
+                                            outline-none p-1"
                                         placeholder="ex: Toamasina"
                                         {...register("province",{required: true})}
                                     />
-                                    {errors.prenom && <span className="text-xs
+                                    {errors.province && <span className="text-xs
                                      text-red-500">Entrer le nom d'une province</span>}
                                 </div>
                                 <div className="w-full">
                                     <label className="text-sm font-semibold">Code postal</label>
                                     <input type="text" 
-                                    className="border border-gray-200 w-full rounded-md focus:border-black outline-none p-1"
+                                    className="border border-gray-200 w-full rounded-md md:text-base text-sm focus:border-black outline-none p-1"
                                         placeholder="ex: 501"
                                         {...register("cp")}
                                     />
@@ -129,12 +130,12 @@ const Client: React.FC = () => {
                             </div>
                             <div className="flex items-center gap-5 w-full">
                                 <button className="w-full bg-[#8fdc97] hover:bg-[#63da6f] transition-all 
-                                        duration-200 ease-in-out rounded-md p-2 border-2 border-[#8fc794f5]"
+                                        duration-200 ease-in-out rounded-md md:p-2 p-1 border-2 border-[#8fc794f5]"
                                         type='submit'
                                 >
                                     Enregistrer
                                 </button>
-                                <button className="w-full border-2 border-gray-200 rounded-md p-2 
+                                <button className="w-full border-2 border-gray-200 rounded-md md:p-2 p-1 
                                 hover:bg-gray-400 transition-all duration-200 bg-gray-300"
                                         onClick={() => {reset()}}
                                 >
