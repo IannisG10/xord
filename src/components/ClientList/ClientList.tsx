@@ -11,7 +11,7 @@ const ClientList: React.FC = () => {
     return(
         <div className="flex justify-center">
             
-            <div className="w-full ">
+            <div className="w-11/12 max-h-80 overflow-y-auto ">
                 <table className="w-full">
                     <thead className="font-monsterat text-sm border-b border-gray-400 bg-gray-300">
                         <tr className="w-full">
@@ -24,7 +24,7 @@ const ClientList: React.FC = () => {
                             <th className="text-center p-1">Edition</th>
                         </tr>
                     </thead>
-                    <tbody className="bg-gray-200 font-chivo">
+                    <tbody className="bg-gray-200 font-chivo h-40 overflow-scroll">
                         {client.map((item,index) => (
                             <tr key={index} className="hover:bg-[#aab9c7] cursor-pointer">
                                 <td className="text-center p-1" >{item.nom}</td>

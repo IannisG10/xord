@@ -23,7 +23,7 @@ const ClientDashBoard: React.FC = () => {
     },[])
 
     return(
-        <div className="h-full flex">
+        <div className="h-screen flex">
             <SideBar/>
             <div className="flex flex-col gap-7 flex-1">
                 <SearchBar/>
