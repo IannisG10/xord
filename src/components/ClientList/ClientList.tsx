@@ -11,7 +11,7 @@ const ClientList: React.FC = () => {
     return(
         <div className="flex justify-center">
             
-            <div className="w-11/12 max-h-80 overflow-y-auto ">
+            <div className="w-11/12 max-h-72 overflow-y-auto ">
                 <table className="w-full">
                     <thead className="font-monsterat text-sm border-b border-gray-400 bg-gray-300">
                         <tr className="w-full">
