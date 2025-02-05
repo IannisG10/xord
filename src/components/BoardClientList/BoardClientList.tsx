@@ -6,7 +6,7 @@ import { RxBorderDashed } from "react-icons/rx";
 import {useAppSelector } from "@/redux/hook/hook";
 import { HiFilter } from "react-icons/hi";
 import { Button } from "../ui/button";
-import ClientList from "../ClientList/ClientList";
+
 
 const BoardClientList: React.FC = () => {
 
@@ -28,7 +28,7 @@ const BoardClientList: React.FC = () => {
                     <HiFilter/> Filtrer
                 </Button>
             </div>
-            <ClientList/>
+            
         </div>
     )
 }

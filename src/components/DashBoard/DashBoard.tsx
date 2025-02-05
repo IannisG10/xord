@@ -21,8 +21,8 @@ const DashBoard: React.FC = () => {
     return(
         
         <div className=" relative w-full flex flex-col">
-            <TopBar/>
-            <div className="grid grid-cols-4 grid-rows-15 gap-4 h-full m-3 font-chivo">
+            <TopBar withSearchBar={false}/>
+            <div className="grid grid-cols-4 grid-rows-15 gap-4 h-full my-20 mx-5 font-chivo">
                 <div className="flex items-center col-span-2 row-span-2 border-2 border-gray-100  
                 shadow rounded p-3 gap-2 hover:shadow-none  transition duration-200 ">
                     <div className="bg-blue-100 flex justify-center items-center rounded-full p-1">
