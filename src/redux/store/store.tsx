@@ -1,9 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import clientReducer from "../reducer/clientReducer";
+import openReducer from "../reducer/openReducer";
+
 
 const store = configureStore({
     reducer: {
-        client: clientReducer
+        client: clientReducer,
+        open: openReducer
     }
 })
 

@@ -4,6 +4,8 @@ import PhoneInput from "@/components/PhoneInput/PhoneInput";
 import "react-phone-number-input/style.css"
 import axios from "axios";
 import { Toaster,toast } from "sonner";
+import { Home } from "lucide-react";
+import { Link } from "react-router";
 
 export interface ClientType {
     nom: string;
@@ -17,7 +19,7 @@ export interface ClientType {
 
 const Client: React.FC = () => {
 
-    const { register,handleSubmit,reset,resetField,formState: {errors} } = useForm<ClientType>()
+    const { register,handleSubmit,reset,formState: {errors} } = useForm<ClientType>()
 
     const onSubmit: SubmitHandler<ClientType> = (data)=>{
         axios.post('https://xord.onrender.com/client',data)
@@ -29,26 +31,24 @@ const Client: React.FC = () => {
             console.error(error)
         })
 
-        resetField("nom")
-        resetField("prenom")
-        resetField("email")
-        resetField("province")
-        resetField("adresse")
-        resetField("phoneNumber")
-        resetField("cp")
-        
+        reset() 
     }
 
-    
     return(
             
-                <div className="m-5 md:w-1/2 w-3/4 flex flex-col">
+                <div className=" relative m-5 md:w-1/2 w-3/4 flex flex-col">
                     <Toaster richColors />
+                    <div className=" flex mt-2 justify-center items-center bg-gray-200 p-1 border-gray-300 rounded border-2 w-fit">
+                        <Link to='/'>
+                            <Home/>
+                        </Link>
+                    </div>
                     <div className="flex flex-col gap-1 my-3">
                             <h1 className="font-bold font-monsterat text-3xl">Clients</h1>
                             <h2 className="text-xl">Bienvenue sur la page d'ajout des nouveaux Clients</h2>
                             <h5 className="font-chivo text-gray-400 font-light text-sm">Entrer les informations sur le client</h5>
                     </div>
+                   
                     <form action="" className=" mx-4" onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex flex-col gap-3 border border-gray-200 rounded-md p-5">
                             <div className="flex md:flex-row flex-col items-center md:gap-5 gap-2 w-full">

@@ -1,43 +1,69 @@
-import React from "react";
-import { HiHome,HiMiniClipboard,HiUsers,HiTag } from "react-icons/hi2";
-import { NavLink } from "react-router";
+import React  from "react";
+import { useAppSelector } from "@/redux/hook/hook";
 
+import { NavLink } from "react-router";
+import { LayoutDashboard,Settings,User,Package,LogOut,Clipboard } from "lucide-react";
 
 
 const SideBar: React.FC = ()=> {
+
+    const open = useAppSelector(state => state.open.open)
+    
     return(
-        <div className="md:w-1/5 w-1/3 h-full bg-[#AEFFD8] pt-4 font-chivo">
-            <ul className="flex justify-center items-center flex-col gap-5 md:pl-4 pl-2 md:text-lg text-sm  ">
-                <NavLink to="/" className={({isActive}) => (
-                    isActive ? "bg-[#8fdc97] w-full rounded-l-lg ":""
-                )}>
-                    <li  className="flex justify-center items-center md:gap-2 gap-1 w-full cursor-pointer"> 
-                        <HiHome/> Acceuil
-                    </li>
-                </NavLink>
-                <NavLink to="/order" className={({isActive}) => (
-                    isActive ? "bg-[#8fdc97] w-full rounded-l-lg ":""
-                )}>
-                    <li className="flex justify-center items-center md:gap-2 gap-1 transition-all duration-200 cursor-pointer rounded-md w-full">
-                        <HiMiniClipboard/> Commandes
-                    </li>
-                </NavLink>
-                <NavLink to="/client" className={({isActive}) => (
-                    isActive ? "bg-[#8fdc97] w-full rounded-l-lg ":""
-                )}>
-                    <li className="flex justify-center items-center md:gap-2 gap-1 transition-all duration-200 cursor-pointer rounded-md w-full">
-                        <HiUsers/> Clients
-                    </li>
-                </NavLink>
-                <NavLink to="/order" className={({isActive}) => (
-                    isActive ? "bg-[#8fdc97] w-full rounded-l-lg ":""
-                )}>
-                    <li className="flex justify-center items-center md:gap-2 gap-1 transition-all duration-200 cursor-pointer rounded-md w-full">
-                        <HiTag/> Produits
-                    </li>
-                </NavLink>
-            </ul>
-        
+        <div className="h-full relative">
+            
+            <aside className={`h-full flex justify-center fixed bg-gray-300 z-30  w-56 ${open ? "translate-x-0":"-translate-x-full"} transition-transform ease-in-out duration-600`}>
+                <nav className=" flex flex-col justify-between w-full  ">
+                    <ul className="flex flex-col gap-5 text-sm mt-16 p-2 font-semibold font-monsterat">
+                        <NavLink to='/'
+                                className={({isActive})=>(
+                                    `flex items-center p-1 rounded  ${isActive ? "bg-gray-600 text-white":"hover:bg-gray-600 hover:text-white" } `
+                                ) }
+                        >
+                            <LayoutDashboard size={21}/> Dashboard
+                        </NavLink>
+                        <NavLink to='/client'
+                                className={({isActive})=>(
+                                    `flex items-center p-1 rounded transition duration-100 ease-linear ${isActive ? "bg-gray-600 text-white":"hover:bg-gray-600 hover:text-white" } `
+                                )}
+                        >
+                            <User size={21}/> Clients
+                        </NavLink>
+                        <NavLink to='/produit'
+                                className={({isActive})=>(
+                                    `flex items-center p-1 rounded transition duration-100 ease-linear ${isActive ? "bg-gray-600":"hover:bg-gray-600 hover:text-white"} `
+                                )}
+                        >
+                            <Clipboard size={21}/> Produits
+                        </NavLink>
+                        <NavLink to='/commande'
+                                className={({isActive})=>(
+                                    `flex items-center p-1 rounded transition duration-100 ease-linear ${isActive ? "bg-gray-600":"hover:bg-gray-600 hover:text-white"} `
+                                )}
+                        >
+                            <Package size={21}/> Commandes
+                        </NavLink>
+                    </ul>
+                    
+                    <ul className=" flex flex-col p-2 gap-3 text-sm font-semibold font-monsterat">
+                        <NavLink to='/parametre'
+                            className={({isActive})=>(
+                                `flex items-center p-1 rounded transition duration-100 ease-linear ${isActive ? "bg-gray-600":"hover:bg-gray-600 hover:text-white"} `
+                            )}
+                        >
+                            <Settings size={21}/>Paramètres
+
+                        </NavLink>
+                        <NavLink to='/iii' 
+                                className={({isActive})=>(
+                                    `flex items-center p-1 rounded transition duration-100 ease-linear ${isActive ? "bg-gray-600":"hover:bg-gray-600 hover:text-white"} `
+                                )}>
+                            <LogOut size={21}/>Déconnexion
+                        </NavLink>
+                    </ul>
+                    
+                </nav>
+            </aside>
         </div>
     )
 }
