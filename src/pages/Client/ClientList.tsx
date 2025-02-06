@@ -1,9 +1,11 @@
 import React from "react";
-import TopBar from "@/components/TopBar/TopBar";
 import SideBar from "@/components/SideBar/SideBar";
 import { useAppDispatch,useAppSelector } from "@/redux/hook/hook";
 import { openMenu } from "@/redux/reducer/openReducer";
 import ClientTable from "@/components/ClientTable/ClientTable";
+
+
+
 
 const ClientList: React.FC =() =>{
 
@@ -11,7 +13,7 @@ const ClientList: React.FC =() =>{
 
     const open = useAppSelector(state => state.open.open)
     return(
-        <div className=" relative">
+        <div className="flex w-full h-screen  relative">
             <SideBar/>
             {open && 
                 <div className=" fixed z-10 inset-0 bg-gray-600 bg-opacity-50 backdrop-blur-sm 
@@ -19,7 +21,6 @@ const ClientList: React.FC =() =>{
                     onClick={()=>{dispatch(openMenu())}}
                 ></div>
             }
-            <TopBar withSearchBar={true}/>
             <ClientTable/>
         </div>
     )

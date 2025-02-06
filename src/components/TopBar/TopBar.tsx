@@ -17,7 +17,7 @@ const TopBar: React.FC<PropsTopBar> = ({withSearchBar}) => {
                 <div className="relative">
                     <input type="text" className="outline-none border-2 border-gray-300 rounded-md 
                         focus:border focus:border-black p-0.5 text-base" placeholder="Rechercher..." />
-                        <Search size={21} className="absolute top-1 right-0 p-1"/>
+                        <Search size={23} className="absolute top-1 right-0 p-1"/>
                 </div>
             }
             <div className="rounded-full bg-[#ac8887] md:size-7 p-2 mx-1 size-6 md:text-base text-sm flex 
