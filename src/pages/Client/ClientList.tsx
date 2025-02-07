@@ -3,6 +3,7 @@ import SideBar from "@/components/SideBar/SideBar";
 import { useAppDispatch,useAppSelector } from "@/redux/hook/hook";
 import { openMenu } from "@/redux/reducer/openReducer";
 import ClientTable from "@/components/ClientTable/ClientTable";
+import TopClient from "@/components/TopClient/TopClient";
 
 
 
@@ -21,7 +22,10 @@ const ClientList: React.FC =() =>{
                     onClick={()=>{dispatch(openMenu())}}
                 ></div>
             }
-            <ClientTable/>
+            <div className="w-full flex flex-col justify-center items-center">
+                <ClientTable/>
+                <TopClient/>
+            </div>
         </div>
     )
 }
