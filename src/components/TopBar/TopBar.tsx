@@ -1,6 +1,8 @@
 import React from "react";
 import MenuHamburger from "../Menu/MenuHamburger";
-import { Search } from "lucide-react";
+import { Search,LogIn } from "lucide-react";
+import { Link } from "react-router";
+
 
 interface PropsTopBar{
     withSearchBar: boolean
@@ -20,10 +22,19 @@ const TopBar: React.FC<PropsTopBar> = ({withSearchBar}) => {
                         <Search size={23} className="absolute top-1 right-0 p-1"/>
                 </div>
             }
-            <div className="rounded-full bg-[#ac8887] md:size-7 p-2 mx-1 size-6 md:text-base text-sm flex 
-                justify-center items-center font-semibold">
-                GI
+            <div className=" flex items-center gap-1 ">
+                <Link to='/signup'>
+                    <div className="p-1 hover:bg-gray-200 rounded duration-150 transition ease-in-out cursor-pointer">
+                        <LogIn size={20} />
+                    </div>
+                </Link>
+                <div className="rounded-full bg-[#ac8887] md:size-7 p-2 mx-1 size-6 md:text-base text-sm flex 
+                    justify-center items-center font-semibold">
+                    GI
+                </div>
+
             </div>
+            
         </div>
     )
 }

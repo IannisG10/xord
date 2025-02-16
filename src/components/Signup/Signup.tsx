@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
+import { Eye,EyeClosed } from "lucide-react";
 
 const Signup: React.FC = () =>{
+
+    const [showPassword,setShowPassword] = useState<boolean>(false)
     return(
         <div className=" flex flex-col gap-3 bg-white border-2 border-gray-200 font-monsterat p-2 w-1/4 rounded-sm">
             <h3 className="text-2xl font-bold">Creer un compte</h3>
@@ -20,10 +23,26 @@ const Signup: React.FC = () =>{
                 </div>
                 <div className="flex flex-col justify-start">
                     <label htmlFor="">Mot de passe</label>
-                    <input type="password"
-                        className="border-2 border-gray-200 rounded p-1 focus:outline-none focus:border-blue-500"
-                    />
-                </div>
+                    <div className=" relative">
+                        <input type={showPassword? "text":"password"}
+                            className="border-2 w-full border-gray-200 rounded p-1 focus:outline-none focus:border-blue-500"
+                        />
+                        {
+                            showPassword ?
+                            <Eye className="absolute top-2 right-1 cursor-pointer"
+                                onClick={()=>{
+                                setShowPassword(!showPassword)
+                            }}
+                            size={20}
+                          />:<EyeClosed className="absolute top-2 right-1 cursor-pointer"
+                            onClick={()=>{
+                            setShowPassword(!showPassword)
+                          }}
+                          size={20}
+                            />
+                        }
+                    </div>
+                </div> 
                 <div className="flex flex-col justify-start">
                     <label htmlFor="">Confirmer le mot de passe</label>
                     <input type="password"

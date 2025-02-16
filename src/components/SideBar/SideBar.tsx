@@ -11,7 +11,6 @@ const SideBar: React.FC = ()=> {
     
     return(
         <div className="h-full relative">
-            
             <aside className={`h-full flex justify-center fixed bg-gray-300 z-30  w-56 ${open ? "translate-x-0":"-translate-x-full"} transition-transform ease-in-out duration-600`}>
                 <nav className=" flex flex-col justify-between w-full  ">
                     <ul className="flex flex-col gap-5 text-sm mt-16 p-2 font-semibold font-monsterat">
@@ -31,14 +30,14 @@ const SideBar: React.FC = ()=> {
                         </NavLink>
                         <NavLink to='/produit'
                                 className={({isActive})=>(
-                                    `flex items-center p-1 rounded transition duration-100 ease-linear ${isActive ? "bg-gray-600":"hover:bg-gray-600 hover:text-white"} `
+                                    `flex items-center p-1 rounded transition duration-100 ease-linear ${isActive ? "bg-gray-600 text-white":"hover:bg-gray-600 hover:text-white"} `
                                 )}
                         >
                             <Clipboard size={21}/> Produits
                         </NavLink>
                         <NavLink to='/commande'
                                 className={({isActive})=>(
-                                    `flex items-center p-1 rounded transition duration-100 ease-linear ${isActive ? "bg-gray-600":"hover:bg-gray-600 hover:text-white"} `
+                                    `flex items-center p-1 rounded transition duration-100 ease-linear ${isActive ? "bg-gray-600 text-white":"hover:bg-gray-600 hover:text-white"} `
                                 )}
                         >
                             <Package size={21}/> Commandes

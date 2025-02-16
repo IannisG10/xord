@@ -73,7 +73,7 @@ const ClientTable: React.FC = () => {
 
                     {/* Pagination */}
                     <div className="flex justify-end font-monsterat">
-                        <div className=" flex items-center gap-3">
+                        <div className=" flex justify-center items-center gap-3">
                             <button className={`flex items-center w-fit md:text-base text-sm bg-gray-200 p-1 hover:bg-gray-100 border-2 rounded 
                                 hover:border-gray-200 ${currentPage === 1 && "cursor-not-allowed" } border-gray-300 transition ease-in-out duration-150`}
                                 onClick={()=>{

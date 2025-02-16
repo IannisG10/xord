@@ -1,19 +1,16 @@
 import React from "react";
 import { HiMagnifyingGlass } from "react-icons/hi2";
-import { HiPlus } from "react-icons/hi2";
+
 
 const SearchBar: React.FC = () => {
     return(
-        <div className="w-full  p-2 bg-gray-100 flex gap-1 items-center md:justify-end justify-start">
-                <div className="relative w-fit md:text-base text-sm">
-                    <input type="text" className="border border-gray-200 rounded-md outline-none p-1 
-                    focus:border-black" placeholder="Rechercher..." />
-                    <div className="text-2xl absolute top-1 right-1">
-                        <HiMagnifyingGlass/>
+        <div className="w-full flex font-monsterat gap-1 items-center justify-start">
+                <div className=" w-fit md:text-base text-sm relative">
+                    <input type="text" className="border-2 border-gray-200 text-lg rounded-md outline-none p-1 pl-7  
+                    " placeholder="Rechercher..." />
+                    <div className="text-2xl absolute  top-2 left-1">
+                        <HiMagnifyingGlass size={23}/>
                     </div>
-                </div>
-                <div className="md:text-2xl text-base bg-[#8fdc97] p-1 rounded-sm hover:bg-gray-200 cursor-pointer">
-                    <HiPlus/>
                 </div>
         </div>
     )
