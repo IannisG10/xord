@@ -36,7 +36,7 @@ const Client: React.FC = () => {
 
     return(
             
-                <div className=" relative m-5 md:w-1/2 w-3/4 flex flex-col">
+                <div className=" relative m-5 md:w-1/2 w-11/12 flex flex-col ">
                     <Toaster richColors />
                     <div className=" flex mt-2 justify-center items-center bg-gray-200 p-1 border-gray-300 rounded border-2 w-fit">
                         <Link to='/'>
@@ -128,14 +128,14 @@ const Client: React.FC = () => {
                                 </div>
                                 
                             </div>
-                            <div className="flex items-center gap-5 w-full">
-                                <button className="w-full bg-[#8fdc97] hover:bg-[#63da6f] transition-all 
+                            <div className="flex items-center justify-between gap-5 w-full">
+                                <button className=" md:w-3/4 w-1/3 bg-[#8fdc97] hover:bg-[#63da6f] transition-all 
                                         duration-200 ease-in-out rounded-md md:p-2 p-1 border-2 border-[#8fc794f5]"
                                         type='submit'
                                 >
                                     Enregistrer
                                 </button>
-                                <button className="w-full border-2 border-gray-200 rounded-md md:p-2 p-1 
+                                <button className=" md:w-3/4 w-1/3 border-2 border-gray-200 rounded-md md:p-2 p-1 
                                 hover:bg-gray-400 transition-all duration-200 bg-gray-300"
                                         onClick={() => {reset()}}
                                 >

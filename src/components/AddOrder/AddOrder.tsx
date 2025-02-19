@@ -26,8 +26,8 @@ const AddOrder: React.FC = ()=>{
         setNewClient(!newClient)
     }
     return(
-        <div className=" flex flex-col m-5 w-1/2">
-            <div className=" flex mt-2 justify-center items-center bg-gray-200 p-1 border-gray-300 rounded border-2 w-fit">
+        <div className=" flex flex-col md:m-5 m-3 md:w-1/2 w-11/12">
+            <div className=" flex md:mt-2 mt-1 justify-center items-center bg-gray-200 p-1 border-gray-300 rounded border-2 w-fit">
                 <Link to="/">
                     <Home/>
                 </Link>
@@ -140,7 +140,7 @@ const AddOrder: React.FC = ()=>{
                             </SelectTrigger>
                             <SelectContent>
                                 <SelectGroup>
-                                    <SelectItem value="acompte">Acompte reçuy</SelectItem>
+                                    <SelectItem value="acompte">Acompte reçu</SelectItem>
                                     <SelectItem value="total"> Payé en totalité</SelectItem>
                                 </SelectGroup>
                             </SelectContent>
@@ -151,13 +151,13 @@ const AddOrder: React.FC = ()=>{
                         <p className=" text-sm">Modifier le montant de l'acompte</p>
                     </div>
                     <div className="flex justify-between items-center gap-5 w-full">
-                        <button className=" bg-[#8fdc97] hover:bg-[#63da6f] transition-all w-1/4 
+                        <button className=" bg-[#8fdc97] hover:bg-[#63da6f] transition-all md:w-1/4 w-1/3 
                                 duration-200 ease-in-out rounded-md md:p-2 p-1 border-2 border-[#8fc794f5]"
                                 type="submit"
                                 >
                             Enregister
                         </button>
-                        <button className="w-1/4 border-2 border-gray-200 rounded-md md:p-2 p-1 
+                        <button className=" md:w-1/4 w-1/3 border-2 border-gray-200 rounded-md md:p-2 p-1 
                                 hover:bg-gray-400 transition-all duration-200 bg-gray-300"
                                 type="submit">
                             Réinitialiser

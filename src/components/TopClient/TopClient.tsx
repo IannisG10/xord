@@ -4,7 +4,7 @@ import { User2 } from "lucide-react";
 
 const TopClient: React.FC = () =>{
     return(
-        <div className=" flex items-center w-3/4 gap-4 mb-3 justify-center">
+        <div className=" flex items-center w-11/12 gap-4 mb-3 justify-center">
             <div className=" flex flex-col w-full gap-3  h-full font-chivo p-3 cursor-pointer  border-gray-100 border-2  hover:shadow-none transition duration-200 shadow rounded">
                 <div className="flex items-center gap-1">
                     <Trophy color="#b2bd1ed0"/> 
@@ -37,8 +37,8 @@ const TopClient: React.FC = () =>{
                     </ul>
                 </div>
             </div>
-            <div className=" flex items-center cursor-pointer justify-start gap-2 border-2 border-gray-100 rounded h-full p-3 duration-200 shadow hover:shadow-none">
-                <div className=" bg-purple-100 rounded-full flex justify-center items-center p-1 ">
+            <div className=" flex md:flex-row flex-col md:items-center items-start cursor-pointer justify-start gap-2 border-2 border-gray-100 rounded h-full p-3 duration-200 shadow hover:shadow-none">
+                <div className=" bg-purple-100 rounded-full flex md:justify-center justify-start items-center p-1 ">
                     <User2 color="purple"/>
                 </div>
                 <div className=" flex flex-col ">

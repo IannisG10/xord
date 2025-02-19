@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const Login: React.FC = () =>{
     return(
         <div className=" h-screen flex justify-center items-center">
-            <div className=" flex flex-col gap-3 bg-white border-2 border-gray-200 font-monsterat p-2 w-1/4 rounded-sm">
+            <div className=" flex flex-col gap-3 bg-white border-2 border-gray-200 font-monsterat p-2 md:w-1/4 w-3/4 rounded-sm">
                 <h3 className="text-2xl font-bold">Connexion</h3>
                 <form action="" className="flex flex-col gap-3">
                     <div className="flex flex-col justify-start">
