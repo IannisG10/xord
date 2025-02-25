@@ -41,7 +41,7 @@ const ClientTable: React.FC = () => {
             
                     <div className="rounded-t border">
                         <Table>
-                            <TableHeader  >
+                            <TableHeader>
                                 <TableRow className=" hover:bg-gray-200 bg-gray-300 font-semibold">
                                     <TableHead className="font-semibold font-chivo">Nom</TableHead>
                                     <TableHead className="font-semibold font-chivo">Prénom</TableHead>
